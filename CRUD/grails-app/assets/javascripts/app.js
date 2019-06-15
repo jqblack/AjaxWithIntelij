@@ -52,3 +52,32 @@ function DeleteUser() {
     }
 }
 
+function GenerarLista() {
+    
+    $.ajax({
+        url: window.location +"/lista",
+        type: 'POST',
+        success: function (response) {
+            alert(response);
+          var html = "";
+          var htmlTable =""
+          var json = eval(response)
+            for (var i = 0; i < json.length  ; i++) {
+                html=  html + "<li>"+json[i].fUsuario+"</li>";
+            }
+
+            $("#lista").html("");
+            $("#lista").html(html);
+
+            for (var i = 0; i < json.length; i++) {
+                htmlTable = htmlTable + "<th scope=\"row\">"+json.length[i].id+"</th>\n" +
+                    "                        <td>"+json.length[i].fUsuario+"</td>\n" +
+                    "                        <td>"+json.length[i].fEmail+"</td>";
+            }
+
+            $("#tabla").html("");
+            $("#tabla").html(htmlTable);
+        }
+    })
+}
+

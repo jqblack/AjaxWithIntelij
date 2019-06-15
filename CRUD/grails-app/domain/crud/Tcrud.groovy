@@ -6,7 +6,6 @@
  *
  */
 package crud
-
 class Tcrud {
     static mapping = {
          table 't_crud'

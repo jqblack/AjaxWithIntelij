@@ -39,6 +39,36 @@
         </div>
     </form>
 
+    <div class="container">
+        <p class="m-3">Lista de Usuarios</p>
+        <button onclick="GenerarLista()" class="btn btn-success">Generar Lista</button>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ul id="lista" class="list-group">
+
+            </ul>
+        </div>
+            <div class="col">
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <th id="tabla" scope="row"></th>
+                        %{--<td></td>--}%
+                        %{--<td></td>--}%
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
 
 </div>
 <body>

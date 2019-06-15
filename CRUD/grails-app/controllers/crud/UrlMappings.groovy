@@ -12,6 +12,9 @@ class UrlMappings {
         }
 
         "/"(view:"/crud")
+//        "/"(controller: "test"){
+//            action=[GET: "crud"]
+//        }
         "500"(view:'/error')
         "404"(view:'/notFound')
 
@@ -27,6 +30,8 @@ class UrlMappings {
             action=[GET:"create"]
         }
 
-
+        "/lista"(controller: "test"){
+            action = [POST:"BuscarAll"]
+        }
     }
 }

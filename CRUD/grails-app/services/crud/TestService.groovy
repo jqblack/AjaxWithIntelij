@@ -51,4 +51,8 @@ class TestService {
         }
     }
 
+    def GetList(){
+        return Tcrud.findAll();
+    }
+
 }
