@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CRUD/CRUD.iml" filepath="$PROJECT_DIR$/CRUD/CRUD.iml" group="CRUD" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CRUD/CRUD_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/CRUD/CRUD_integrationTest.iml" group="CRUD" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CRUD/CRUD_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CRUD/CRUD_main.iml" group="CRUD" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CRUD/CRUD_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CRUD/CRUD_test.iml" group="CRUD" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/untitled.iml" filepath="$PROJECT_DIR$/.idea/modules/untitled.iml" />
+    </modules>
+  </component>
+</project>

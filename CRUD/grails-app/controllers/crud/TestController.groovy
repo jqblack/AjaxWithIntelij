@@ -43,4 +43,9 @@ class TestController {
 
         render(gson.toJson(lista))
     }
+
+    def GetById(){
+        int dato = Integer.parseInt(params.id);
+        render(testService.GetById(dato) as String);
+    }
 }

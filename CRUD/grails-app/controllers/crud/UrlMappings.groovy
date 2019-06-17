@@ -33,5 +33,9 @@ class UrlMappings {
         "/lista"(controller: "test"){
             action = [POST:"BuscarAll"]
         }
+
+        "/byid"(controller: "test"){
+            action=[POST:"GetById"]
+        }
     }
 }

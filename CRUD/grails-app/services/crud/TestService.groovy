@@ -1,5 +1,6 @@
 package crud
 
+import grails.converters.JSON
 import grails.gorm.transactions.Transactional
 import org.apache.commons.lang.ObjectUtils
 import org.springframework.jdbc.core.JdbcTemplate
@@ -53,6 +54,10 @@ class TestService {
 
     def GetList(){
         return Tcrud.findAll();
+    }
+
+    def GetById(int id){
+        return (Tcrud.findById(id) as JSON);
     }
 
 }

@@ -3,6 +3,10 @@ function getMapa() {
     var emailTexto = document.getElementById("email").value;
     var passTexto = document.getElementById("password").value;
     var usuario = document.getElementById("user").value;
+    var isactivo = document.getElementById("micheck").checked;
+    var fecha = $("#fecha").val();
+
+    alert(fecha);
 
     if(emailTexto != "" && passTexto != "" && usuario != ""){
 
@@ -17,6 +21,9 @@ function getMapa() {
             type: 'POST',
             success: function (response) {
                 alert(response);
+                document.getElementById("email").value = "";
+                document.getElementById("password").value = "";
+                document.getElementById("user").value = "";
             }
         });
     }
@@ -58,7 +65,6 @@ function GenerarLista() {
         url: window.location +"/lista",
         type: 'POST',
         success: function (response) {
-            alert(response);
           var html = "";
           var htmlTable =""
           var json = eval(response)
@@ -70,14 +76,41 @@ function GenerarLista() {
             $("#lista").html(html);
 
             for (var i = 0; i < json.length; i++) {
-                htmlTable = htmlTable + "<th scope=\"row\">"+json.length[i].id+"</th>\n" +
-                    "                        <td>"+json.length[i].fUsuario+"</td>\n" +
-                    "                        <td>"+json.length[i].fEmail+"</td>";
+                htmlTable = htmlTable +"<tr>\n" +
+                    "                        <td scope=\"col\">"+json[i].id+"</td>\n" +
+                    "                        <td scope=\"col\">"+json[i].fUsuario+"</td></td>\n" +
+                    "                        <td scope=\"col\">"+json[i].fEmail+"</td>\n" +
+                    "                        <td scope=\"col\"><button id='"+json[i].id+"' onclick='PonerDatosUp("+json[i].id+")' class='btn btn-success'>Seleccionar</button></td>\n"+
+                    "                    </tr>"
             }
 
-            $("#tabla").html("");
-            $("#tabla").html(htmlTable);
+            $("#contenido").html("");
+            $("#contenido").html(htmlTable);
+        }
+    });
+
+}
+
+function PonerDatosUp(id) {
+    var dato = id;
+
+    var mapa = new Object();
+    mapa["id"] = dato;
+
+    $.ajax({
+        data:mapa,
+        url: window.location+'/byid',
+        type:'POST',
+        success: function (response) {
+            var res =  JSON.parse(response);
+            document.getElementById("user").value = res.fUsuario;
+            document.getElementById("email").value = res.fEmail;
+            document.getElementById("password").value = res.fPass;
         }
     })
 }
+ var opcion = -1;
+function getTipoUsu () {
 
+    opcion = document.getElementById("opciones").value;
+}

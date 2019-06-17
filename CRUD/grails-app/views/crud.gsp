@@ -33,11 +33,39 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
-        <div>
-            <button onclick="getMapa()" id="btn_guardar" type="button" class="btn btn-primary">Aceptar</button>
-            <button onclick="DeleteUser()" id="btnBorrar" type="button" class="btn btn-primary">Delete</button>
-        </div>
     </form>
+
+    <div class="row container mt-2">
+
+        <div class="col">
+            <select id="opciones" onchange="getTipoUsu()" class="form-control selected">
+                <option value="-1">Opciones de Usuarios</option>
+                <option value="0">Administrador</option>
+                <option value="1">Cliente</option>
+            </select>
+        </div>
+
+        <div class="col">
+
+            <h1>Show a date control:</h1>
+
+            <form>
+                Birthday: <input id="fecha" type="date" name="bday">
+            </form>
+
+        </div>
+
+        <div class="col">
+
+            <input type="checkbox" id="micheck" value="activo">Esta activo ?<br>
+
+        </div>
+
+    </div>
+    <div>
+        <button onclick="getMapa()" id="btn_guardar" type="button" class="btn btn-primary">Aceptar</button>
+        <button onclick="DeleteUser()" id="btnBorrar" type="button" class="btn btn-primary">Delete</button>
+    </div>
 
     <div class="container">
         <p class="m-3">Lista de Usuarios</p>
@@ -51,19 +79,19 @@
             </ul>
         </div>
             <div class="col">
-                <table class="table table-dark">
+                <table id="tabla" class="table table-dark">
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Opciones</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr >
-                        <th id="tabla" scope="row"></th>
-                        %{--<td></td>--}%
-                        %{--<td></td>--}%
+                    <tbody id= "contenido">
+                    <tr>
+                        <th scope="row"></th>
+
                     </tr>
                     </tbody>
                 </table>
